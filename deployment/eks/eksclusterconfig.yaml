@@ -1,0 +1,23 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: udagram
+  region: eu-central-1
+  version: "1.18"
+
+managedNodeGroups:
+  - name: udagram-ng
+    instanceType: t2.micro
+    desiredCapacity: 6
+    minSize: 4
+    maxSize: 7
+    ssh:
+      allow: true
+      
+cloudWatch:
+  clusterLogging:
+    # enable specific types of cluster control plane logs
+    enableTypes: ["audit"]
+    # all supported types: "api", "audit", "authenticator", "controllerManager", "scheduler"
+    # supported special values: "*" and "all"
