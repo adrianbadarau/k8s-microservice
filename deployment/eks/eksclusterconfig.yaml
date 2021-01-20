@@ -8,8 +8,8 @@ metadata:
 
 managedNodeGroups:
   - name: udagram-ng
-    instanceType: t2.micro
-    desiredCapacity: 6
+    instanceType: t3.medium
+    desiredCapacity: 5
     minSize: 4
     maxSize: 7
     ssh:
